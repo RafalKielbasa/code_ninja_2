@@ -5,7 +5,7 @@
 - **Formularze w React:** Obsługa formularzy bez użycia zewnętrznych bibliotek.
 - **Tablice w React:** Dynamiczne dodawanie i usuwanie elementów z listy życzeń.
 - **Stylowanie CSS-in-JS:** Użycie biblioteki `styled-components` do stylowania komponentów.
-- **Komponenty z biblioteki Material UI:** Użycie komponentów `material-ui` do stylowania komponentów.
+- **Komponenty z biblioteki Material UI:** Użycie komponentów `material-ui` do tworzenia zawartości strony.
 
 ## Etapy Zadania
 
