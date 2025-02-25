@@ -4,7 +4,7 @@
 
 ### 1. Priorytety Życzeń
 
-- Dodajemy tłumaczenie do kolumny priority.
+- Dostosowujemy wartość priority do sortowania. Dodajemy tłumaczenie do kolumny priority.
 - W komponencie WishList wyświetl priorytet w formie komponentu zmieniającego kolor w zależności od priorytetu.
 - Dodaj przyciski lub rozwijaną listę pozwalającą na sortowanie życzeń według priorytetu (rosnąco/malejąco).
 - Dodaj odpowiednią logikę która pozwoli sortowanie według priorytetu.
