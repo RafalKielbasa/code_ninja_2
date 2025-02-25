@@ -11,16 +11,16 @@ const StyledApp = styled.div`
 `
 
 const gifts = [
-  { id: 1, gift: 'Smartphone', person: 'Alice', price: 699, priority: 'high' },
-  { id: 2, gift: 'Headphones', person: 'Bob', price: 299, priority: 'medium' },
-  { id: 3, gift: 'Book', person: 'Charlie', price: 25, priority: 'low' },
-  { id: 4, gift: 'Watch', person: 'Diana', price: 199, priority: 'medium' },
-  { id: 5, gift: 'Camera', person: 'Eve', price: 499, priority: 'high' },
-  { id: 6, gift: 'Tablet', person: 'Frank', price: 350, priority: 'medium' },
-  { id: 7, gift: 'Backpack', person: 'Grace', price: 80, priority: 'low' },
-  { id: 8, gift: 'Shoes', person: 'Hank', price: 120, priority: 'low' },
-  { id: 9, gift: 'Perfume', person: 'Ivy', price: 150, priority: 'medium' },
-  { id: 10, gift: 'Bicycle', person: 'Jack', price: 450, priority: 'high' },
+  { id: 1, gift: 'Smartphone', person: 'Alice', price: 699, priority: 3 },
+  { id: 2, gift: 'Headphones', person: 'Bob', price: 299, priority: 2 },
+  { id: 3, gift: 'Book', person: 'Charlie', price: 25, priority: 1 },
+  { id: 4, gift: 'Watch', person: 'Diana', price: 199, priority: 2 },
+  { id: 5, gift: 'Camera', person: 'Eve', price: 499, priority: 3 },
+  { id: 6, gift: 'Tablet', person: 'Frank', price: 350, priority: 2 },
+  { id: 7, gift: 'Backpack', person: 'Grace', price: 80, priority: 1 },
+  { id: 8, gift: 'Shoes', person: 'Hank', price: 120, priority: 1 },
+  { id: 9, gift: 'Perfume', person: 'Ivy', price: 150, priority: 2 },
+  { id: 10, gift: 'Bicycle', person: 'Jack', price: 450, priority: 3 },
 ]
 
 function App() {

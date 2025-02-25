@@ -21,7 +21,7 @@ export const WishForm = ({ setGiftList }) => {
   const [gift, setGift] = useState('')
   const [person, setPerson] = useState('')
   const [price, setPrice] = useState(0)
-  const [priority, setPriority] = useState('low')
+  const [priority, setPriority] = useState(1)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -34,7 +34,7 @@ export const WishForm = ({ setGiftList }) => {
     setGift('')
     setPerson('')
     setPrice(0)
-    setPriority('low')
+    setPriority(1)
   }
   return (
     <StyledWishForm>
@@ -69,9 +69,9 @@ export const WishForm = ({ setGiftList }) => {
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
           >
-            <MenuItem value='low'>Niski</MenuItem>
-            <MenuItem value='medium'>Średni</MenuItem>
-            <MenuItem value='high'>Wysoki</MenuItem>
+            <MenuItem value={1}>Niski</MenuItem>
+            <MenuItem value={2}>Średni</MenuItem>
+            <MenuItem value={3}>Wysoki</MenuItem>
           </Select>
           <Button type='submit' variant='text'>
             Dodaj życzenie
