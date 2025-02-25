@@ -1,11 +1,32 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import styled from "styled-components";
 
-export const WishForm = ({setGiftList}) => {
+const StyledWishForm = styled.div`
+  display: flex;
+  flex: 1;
+  padding: 4px;
+`;
+const StyledTextField = styled(TextField)`
+  .MuiTextField-root {
+    margin: 8px;
+    padding: 4px;
+  }
+`;
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const WishForm = ({ setGiftList }) => {
   const [gift, setGift] = useState("");
   const [person, setPerson] = useState("");
   const [price, setPrice] = useState(0);
+  const [priority, setPriority] = useState("Low");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,39 +34,55 @@ export const WishForm = ({setGiftList}) => {
       alert("Nazwa prezentu nie może być pusta");
       return;
     }
-    const newGift = { id: Date.now(), gift, person, price };
-    setGiftList((prev)=>([...prev,newGift]))
-    setGift("")
-    setPerson("")
-    setPrice(0)
+    const newGift = { id: Date.now(), gift, person, price, priority };
+    setGiftList((prev) => [...prev, newGift]);
+    setGift("");
+    setPerson("");
+    setPrice(0);
+    setPriority("Low");
   };
   return (
-    <div>
+    <StyledWishForm>
       <form onSubmit={handleSubmit}>
-        <TextField
-          onChange={(event) => setGift(event.target.value)}
-          id="outlined-basic"
-          label="Gift"
-          variant="outlined"
-          value={gift}
-        />
-        <TextField
-          onChange={(event) => setPerson(event.target.value)}
-          id="outlined-basic"
-          label="Person"
-          variant="outlined"
-          value={person}
-        />
-        <TextField
-          onChange={(event) => setPrice(event.target.value)}
-          id="outlined-basic"
-          type="number"
-          label="Price"
-          variant="outlined"
-          value={price}
-        />
-        <Button type="submit" variant="text">Dodaj życzenie</Button>
+        <StyledDiv>
+          <TextField
+            margin="normal"
+            onChange={(event) => setGift(event.target.value)}
+            id="outlined-basic"
+            label="Gift"
+            variant="outlined"
+            value={gift}
+          />
+          <TextField
+            margin="normal"
+            onChange={(event) => setPerson(event.target.value)}
+            id="outlined-basic"
+            label="Person"
+            variant="outlined"
+            value={person}
+          />
+          <TextField
+            margin="normal"
+            onChange={(event) => setPrice(event.target.value)}
+            id="outlined-basic"
+            type="number"
+            label="Price"
+            variant="outlined"
+            value={price}
+          />
+          <Select
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+          >
+            <MenuItem value="Low">Niski</MenuItem>
+            <MenuItem value="Medium">Średni</MenuItem>
+            <MenuItem value="High">Wysoki</MenuItem>
+          </Select>
+          <Button type="submit" variant="text">
+            Dodaj życzenie
+          </Button>
+        </StyledDiv>
       </form>
-    </div>
+    </StyledWishForm>
   );
 };
