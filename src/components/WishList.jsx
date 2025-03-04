@@ -14,7 +14,7 @@ const StyledWishList = styled.div`
   padding: 4px;
 `;
 
-export const WishList = ({ gifts = [], removeGift }) => {
+export const WishList = ({ gifts = [], removeGift, setGiftList }) => {
   const [priority, setPriority] = useState("asc");
 
   const sortPriority = () => {
@@ -25,12 +25,12 @@ export const WishList = ({ gifts = [], removeGift }) => {
     }
   };
 
-  const sortedGifts = [...gifts].sort(( {priority:firstPriority},{priority:secondPriority}) => {
-    if (priority === "asc") return firstPriority-secondPriority
-    return secondPriority-firstPriority;
-  }
-    
-  )
+  const sortedGifts = [...gifts].sort(
+    ({ priority: firstPriority }, { priority: secondPriority }) => {
+      if (priority === "asc") return firstPriority - secondPriority;
+      return secondPriority - firstPriority;
+    }
+  );
 
   return (
     <StyledWishList>
@@ -41,7 +41,11 @@ export const WishList = ({ gifts = [], removeGift }) => {
             <TableCell>Person</TableCell>
             <TableCell>Price</TableCell>
             <TableCell>
-              <TableSortLabel active direction={priority} onClick={sortPriority}>
+              <TableSortLabel
+                active
+                direction={priority}
+                onClick={sortPriority}
+              >
                 Priority
               </TableSortLabel>
             </TableCell>
@@ -55,6 +59,7 @@ export const WishList = ({ gifts = [], removeGift }) => {
               gift={gift}
               giftIndex={index}
               removeGift={removeGift}
+              setGiftList={setGiftList}
             />
           ))}
         </TableBody>
