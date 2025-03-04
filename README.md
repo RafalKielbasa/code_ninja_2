@@ -2,21 +2,22 @@
 
 ## Etapy Zadania
 
-### 1. Komponent `WishList` (Lista Życzeń)
+### 1. Priorytety Życzeń
 
-- Robimy refactor kodu, w celu poprawy jego czytelności.
-- Dodaj kolumne w tabeli o nazwie "Actions" a w nich przyciski "Usuń".
-- Przycisk "Usuń" powinien wywoływać funkcję przekazaną przez props (np. `onRemoveWish`), przekazując ID życzenia do usunięcia.
-
-### 2. Stylowanie (styled-components)
-
-- Ostyluj aplikację za pomocą styled-components, nie zapomnij o responsywności strony
-- Aplikacja powinna mieć układ dwóch kolumn, jedna ta tabelę druga na formularz.
-- Należy pamiętać o opdowiednim paddingu.
-
-### 3. Priorytety Życzeń
-
-- Dodaj do formularza WishForm pole typu <select> (rozwijana lista) pozwalające wybrać priorytet życzenia (np. "Niski", "Średni", "Wysoki").
-- Zmodyfikuj strukturę obiektu życzenia, aby zawierała pole priority.
-- W komponencie WishList wyświetl priorytet obok nazwy i ceny życzenia. Możesz użyć np. ikon lub różnych kolorów tła dla różnych priorytetów.
+- Dostosowujemy wartość priority do sortowania. Dodajemy tłumaczenie do kolumny priority.
+- W komponencie WishList wyświetl priorytet w formie komponentu zmieniającego kolor w zależności od priorytetu.
 - Dodaj przyciski lub rozwijaną listę pozwalającą na sortowanie życzeń według priorytetu (rosnąco/malejąco).
+- Dodaj odpowiednią logikę która pozwoli sortowanie według priorytetu.
+
+### 2. Poprawa stylowania
+
+- Umieszczamy formularz skrajnie po prawej stronie, tak żeby tabela zajeła maksymalalną dostępną przestrzeń.
+- Dodajemy możliwość ukrycia formulrza za pomocą przycisku (Pokaż formularz / Ukryj formularz) Umieszczonym w prawym górnym rogu aplikacji.
+- Po ukryciu formularza tabela powinna się rozciągać na całą szerokość.
+
+### 3. Edycja Życzeń
+
+- Dodaj przycisk "Edytuj" obok każdego życzenia (w komponencie `WishList`).
+- Po kliknięciu "Edytuj", życzenie powinno przejść w tryb edycji. Można to zrealizować na kilka sposobów:
+  - Zamień tekst życzenia (nazwa, cena, priorytet) na pola formularza (`<input>`). Dodaj przycisk "Zapisz" i "Anuluj".
+  - Otwórz okno modalne (np. używając prostego komponentu modalnego, bez zewnętrznych bibliotek) z formularzem do edycji życzenia.
